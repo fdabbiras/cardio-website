@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Prediction</title>
+</head>
+<body>
+    <h1>Heart Attack Risk Prediction</h1>
+    <form action="/predict" method="post">
+        <label>Age:</label><br>
+        <input type="number" name="age" required><br><br>
+
+        <label>Gender (1=Male, 0=Female):</label><br>
+        <input type="number" name="gender" required><br><br>
+
+        <label>Height (cm):</label><br>
+        <input type="number" name="height" required><br><br>
+
+        <label>Weight (kg):</label><br>
+        <input type="number" name="weight" required><br><br>
+
+        <label>Systolic BP (ap_hi):</label><br>
+        <input type="number" name="ap_hi" required><br><br>
+
+        <label>Diastolic BP (ap_lo):</label><br>
+        <input type="number" name="ap_lo" required><br><br>
+
+        <label>Cholesterol (1=Normal, 2=Above Normal, 3=Well Above Normal):</label><br>
+        <input type="number" name="cholesterol" required><br><br>
+
+        <label>Glucose (1=Normal, 2=Above Normal, 3=Well Above Normal):</label><br>
+        <input type="number" name="gluc" required><br><br>
+
+        <label>Smoking (1=Yes, 0=No):</label><br>
+        <input type="number" name="smoke" required><br><br>
+
+        <label>Alcohol Intake (1=Yes, 0=No):</label><br>
+        <input type="number" name="alco" required><br><br>
+
+        <label>Physical Activity (1=Yes, 0=No):</label><br>
+        <input type="number" name="active" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
